@@ -20,8 +20,22 @@ end
 post '/index' do
   sql = "insert into videos (title, description, url, genre) values ('#{params['title']}', '#{params['description']}', '#{params['url']}', '#{params['genre']}')"
   run_sql(sql)
-  redirect to('index')
+  redirect to('/')
 end
+
+get '/index' do
+  sql =  "select * from videos"
+  @videos = run_sql(sql)
+  erb :index
+end
+
+
+
+
+
+
+
+
 
 
 
