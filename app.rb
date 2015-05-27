@@ -8,11 +8,6 @@ get '/' do
   redirect to('/index')
 end
 
-get '/index' do
-
- erb :index
-end
-
 get '/new' do
   erb :new
 end
@@ -28,15 +23,6 @@ get '/index' do
   @videos = run_sql(sql)
   erb :index
 end
-
-
-
-
-
-
-
-
-
 
 
 def run_sql(sql)
